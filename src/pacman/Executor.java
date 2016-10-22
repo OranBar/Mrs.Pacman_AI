@@ -48,16 +48,24 @@ public class Executor
 		int numTrials=30;
 		
 		Executor exec = new Executor();
+		System.out.println("MCTS Controller vs LEGACY2THERECONING");
 		Controller<MOVE> pacmanController = new TheRealPacmanController();
-//		Controller<MOVE> pacmanController = new TheRealPacmanController();
-		/* run a game in synchronous mode: game waits until controllers respond. */
-//		System.out.println("TheRealMCTSPacman vs LEGACY2THERECKONING");
+		
+		
+		/* Run a single game instance with visual */
+		
 		exec.runGame(pacmanController, new Legacy2TheReckoning(), visual, delay);
 		
-		/* run multiple games in batch mode - good for testing. */
-		
-		System.out.println("MCTS Controller vs LEGACY2THERECONING");
+		/* run multiple games in batch mode - good for testing. 
+		   Uncomment next line to run numTrials games. Results will be shown on the console */
 //		exec.runExperiment(pacmanController, new Legacy2TheReckoning(),numTrials);
+
+		
+		
+		
+		
+		
+		
 //		System.out.println("STARTER PACMAN vs LEGACY2THERECONING");
 //		exec.runExperiment(new StarterPacMan(), new Legacy2TheReckoning(),numTrials);
 //		System.out.println("RANDOM PACMAN vs LEGACY2THERECONING");
