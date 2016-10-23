@@ -31,7 +31,7 @@ public abstract class MCTree<S, A> {
 	
 	private Random random = new Random();
 	// Exploration coefficient
-	private final double C = (float) (1.0 / Math.sqrt(2));
+	protected double C = (float) (1.0 / Math.sqrt(2));
 
 	protected abstract S getCopy(S state);
 	protected void preRunHook(S state){ ; }
@@ -156,8 +156,9 @@ public abstract class MCTree<S, A> {
 	 * @return
 	 */
 	private double getUCTvalue(MCNode node, double c) {
-		double childNodeScore = (node.reward / node.timesVisited)+ c*(Math.sqrt((2.0 * Math.log(node.parent.timesVisited))
+		double childNodeScore = (node.reward / node.timesVisited)+ c *(Math.sqrt((2.0 * Math.log(node.parent.timesVisited))
 				/ node.timesVisited));
+		
 		if (Double.isNaN(childNodeScore)) {
 			childNodeScore = 0.0;
 		}
