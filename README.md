@@ -13,4 +13,4 @@ All of the code used for mrs. Pacman's AI is in the pacman.entries package.
 ## Top Scores
 
 The best recorded score is 56 800. 
-The best recorded average score is 38 375 over 30 games.
+The best recorded average score is 41 465 over 30 games.
