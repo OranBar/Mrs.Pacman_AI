@@ -36,10 +36,15 @@ public class TheRealMCTSPacman extends MCTree<Game, MOVE>{
 	private double ghostDistanceAfterPPRewardMult = 0.4222901868213781;
 
 	public TheRealMCTSPacman() {
-	
+		C = 20; //Empirically tested to be the best value
 	}
 	
 	public TheRealMCTSPacman(double[] params) {
+		if(params.length == 1){
+			C = params[0];
+			return;
+		}
+		
 		this.maxIterations = (int) params[0];
 		this.maxDPolicyIters = (int) params[1];
 		this.levelCompleteReward = 3000;
